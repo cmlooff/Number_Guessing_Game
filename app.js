@@ -9,7 +9,7 @@
 //// Game values
 let min = 1,
   max = 10,
-  winningNum = getWinningNum(), // This will be random later
+  winningNum = getRandomNum(min, max), // This will be random later
   guessesLeft = 3;
 
 //// UI Elements
@@ -67,6 +67,11 @@ function gameOver(won, msg) {
   //// Play again?
   guessBtn.value = 'Play Again';
   guessBtn.className += 'play-again';
+}
+
+//// Get Winning Number RNG
+function getRandomNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min) // Math method for RNG
 }
 
 //// Set message
